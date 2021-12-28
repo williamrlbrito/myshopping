@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import firestore from '@react-native-firebase/firestore';
+import { v4 } from 'uuid';
 
 import { Container } from './styles';
 import { ButtonIcon } from '../ButtonIcon';
@@ -19,11 +20,10 @@ export function FormBox() {
 
     firestore()
       .collection('products')
-      .add(product)
+      .doc(v4())
+      .set(product)
       .then(() => {
         Alert.alert('Produto adicionado com sucesso!');
-        setDescription('');
-        setQuantity(0);
       })
       .catch((error) => console.log(error));
   }
