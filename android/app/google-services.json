@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "510684467663",
+    "project_id": "myshopping-wb",
+    "storage_bucket": "myshopping-wb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510684467663:android:4b45631961b876cca2c2ba",
+        "android_client_info": {
+          "package_name": "com.myshopping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510684467663-q3v7sa2e5s8o8nju91glaca60a319lqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOhx2H-Cv9RiB_8Whl1DwNB7QUPbYWNRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510684467663-q3v7sa2e5s8o8nju91glaca60a319lqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510684467663:android:1b6d49bd236268f6a2c2ba",
+        "android_client_info": {
+          "package_name": "com.myshoppingwb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510684467663-kakh8c5do09sp6nteo3hvduqnemb5j1q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myshoppingwb",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "510684467663-q3v7sa2e5s8o8nju91glaca60a319lqp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOhx2H-Cv9RiB_8Whl1DwNB7QUPbYWNRM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510684467663-q3v7sa2e5s8o8nju91glaca60a319lqp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

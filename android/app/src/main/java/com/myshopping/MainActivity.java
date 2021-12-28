@@ -1,4 +1,4 @@
-package com.myshopping;
+package com.myshoppingwb;
 
 import android.os.Bundle;
 
