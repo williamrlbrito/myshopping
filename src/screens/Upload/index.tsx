@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Alert } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import storage from '@react-native-firebase/storage';
+import { v4 } from 'uuid';
 
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
@@ -26,6 +29,16 @@ export function Upload() {
     }
   };
 
+  async function handleUpload() {
+    const fileName = v4();
+    const reference = storage().ref(`/images/${fileName}.png`);
+    
+    reference
+      .putFile(image)
+      .then(() => Alert.alert('Uploaded!'))
+      .catch((error) => console.log(error));
+  }
+
   return (
     <Container>
       <Header title="Lista de compras" />
@@ -35,7 +48,7 @@ export function Upload() {
 
         <Button
           title="Fazer upload"
-          onPress={() => { }}
+          onPress={handleUpload}
         />
 
         <Progress>
