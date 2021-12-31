@@ -23,6 +23,13 @@ export function Product({ data }: Props) {
       .doc(data.id)
       .update({ done: !data.done });
   }
+
+  function handleDelete() {
+    firestore()
+      .collection('products')
+      .doc(data.id)
+      .delete();
+  }
   
   return (
     <Container>
@@ -45,6 +52,7 @@ export function Product({ data }: Props) {
         <ButtonIcon
           icon="delete"
           color="alert"
+          onPress={handleDelete}
         />
       </Options>
     </Container>
