@@ -12,6 +12,9 @@ import { Container, Content, Progress, Transferred } from './styles';
 
 export function Upload() {
   const [image, setImage] = useState('');
+  const [bytesTransferred, setBytesTransferred] = useState('');
+  const [progress, setProgress] = useState(0);
+
 
   async function handlePickImage() {
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -30,13 +33,24 @@ export function Upload() {
   };
 
   async function handleUpload() {
+    if (!image) return;
+
     const fileName = v4();
     const reference = storage().ref(`/images/${fileName}.png`);
     
-    reference
-      .putFile(image)
-      .then(() => Alert.alert('Uploaded!'))
-      .catch((error) => console.log(error));
+    const uploadTask = reference.putFile(image);
+
+    uploadTask.on('state_changed', (snapshot) => {
+      const { bytesTransferred, totalBytes } = snapshot;
+
+      setBytesTransferred(`${bytesTransferred} transferido de ${totalBytes}`);
+      setProgress(Math.round(bytesTransferred / totalBytes * 100));
+    });
+
+    uploadTask.then(() => {
+      Alert.alert('Upload realizado com sucesso!');
+      setImage('');
+    });
   }
 
   return (
@@ -52,11 +66,11 @@ export function Upload() {
         />
 
         <Progress>
-          0%
+          {progress}%
         </Progress>
 
         <Transferred>
-          0 de 100 bytes transferido
+          {bytesTransferred}
         </Transferred>
       </Content>
     </Container>
