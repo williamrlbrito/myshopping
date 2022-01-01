@@ -22,9 +22,10 @@ export function SignIn() {
       .catch((error) => console.log(error.code));
   }
 
-  async function handleSignInWithEmailAndPassword() {
-    const { user } = await auth().signInWithEmailAndPassword(email, password);
-    console.log(user);
+  function handleSignInWithEmailAndPassword() {
+    auth().signInWithEmailAndPassword(email, password)
+      .then(({user}) => console.log(user))
+      .catch((error) => console.log(error.code));
   }
 
   return (
