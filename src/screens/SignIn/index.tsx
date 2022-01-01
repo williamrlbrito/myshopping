@@ -18,7 +18,8 @@ export function SignIn() {
 
   function handleCreateAccount() {
     auth().createUserWithEmailAndPassword(email, password)
-      .then(() => Alert.alert('Conta criada com sucesso!'));
+      .then(() => Alert.alert('Conta criada com sucesso!'))
+      .catch((error) => console.log(error.code));
   }
 
   return (
