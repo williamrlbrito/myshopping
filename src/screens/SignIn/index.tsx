@@ -28,6 +28,12 @@ export function SignIn() {
       .catch((error) => console.log(error.code));
   }
 
+  function handleForgotPassword() {
+    auth().sendPasswordResetEmail(email)
+      .then(() => Alert.alert('Email enviado com sucesso!'))
+      .catch((error) => console.log(error.code));
+  }
+
   return (
     <Container>
       <Title>MyShopping</Title>
@@ -50,7 +56,7 @@ export function SignIn() {
       <Button title="Entrar" onPress={handleSignInWithEmailAndPassword} />
 
       <Account>
-        <ButtonText title="Recuperar senha" onPress={() => { }} />
+        <ButtonText title="Recuperar senha" onPress={handleForgotPassword} />
         <ButtonText title="Criar minha conta" onPress={handleCreateAccount} />
       </Account>
     </Container>
